@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             background-color: #c2e5f0;
-            overflow-x: hidden; /* Impede o overflow horizontal */
+            overflow-x: hidden;
         }
         .container {
             width: 100%;
@@ -32,7 +32,6 @@
             text-decoration: none;
             font-size: 20px;
         }
-
         .topnav input[type="text"] {
             width: 30vw;
             padding: 10px;
@@ -45,7 +44,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            object-fit: cover; /* Garante que a imagem do avatar mantenha a proporção */
+            object-fit: cover;
         }
         .menu {
             width: 100%;
@@ -54,7 +53,7 @@
             align-items: center;
             background-color: #007eff;
             padding: 10px 50px;
-            margin: 50px;
+            margin: 50px 0;
         }
         .menu nav ul {
             list-style-type: none;
@@ -132,9 +131,9 @@
         <header>
             <h1>ForUni</h1>
             <div class="topnav">
-                <input type="text" placeholder="Search..">
+                <input type="text" placeholder="Busca..">
             </div>
-            <a class="login" href="#">Entrar/cadastrar</a>
+            <a class="login" href="#"><h2>Entrar/cadastrar</h2></a>
             <img src="./src/images/avatar.png" alt="Avatar" class="avatar">
         </header>
         <div class="menu">
@@ -148,6 +147,7 @@
                 </ul>
             </nav>
         </div>
+        
         <div class="forum-section">
             <div class="filters">
                 <h3>Filtrar por Assuntos</h3>

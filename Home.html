@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             background-color: #c2e5f0;
-            overflow-x: hidden; /* Impede o overflow horizontal */
+            overflow-x: hidden;
         }
         .container {
             width: 100%;
@@ -26,6 +26,24 @@
             background-color: #044aff;
             color: #ffffff;
         }
+        .login form input{
+            width: 60%;
+            height: 20px;
+            background: #e0dede;
+            justify-content: center;
+            display: flex;
+            margin: 20px auto;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        .login{
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
         .topnav input[type="text"] {
             width: 30vw;
             padding: 10px;
@@ -38,7 +56,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            object-fit: cover; /* Garante que a imagem do avatar mantenha a proporção */
+            object-fit: cover; 
         }
         .menu {
             width: 100%;
@@ -47,7 +65,7 @@
             align-items: center;
             background-color: #007eff;
             padding: 10px 50px;
-            margin: 50px;
+            margin: 50px 0;
         }
         .menu nav ul {
             list-style-type: none;
@@ -90,94 +108,78 @@
     	    height: 100%;
         }
         label{
-	    color: #fff;
-	    font-size: 2.3em;
-	    justify-content: center;
-	    display: flex;
-	    margin: 60px;
-	    font-weight: bold;
-	    cursor: pointer;
-    	transition: .5s ease-in-out;
-    }
-        input{
-	    width: 60%;
-    	height: 20px;
-    	background: #e0dede;
-	    justify-content: center;
-	    display: flex;
-	    margin: 20px auto;
-	    padding: 10px;
-	    border: none;
-	    outline: none;
-	    border-radius: 5px;
-    }
-    button{
-    	width: 60%;
-    	height: 40px;
-    	margin: 10px auto;
-    	justify-content: center;
-	    display: block;
-	    color: #fff;
-	    background: #573b8a;
-	    font-size: 1em;
-	    font-weight: bold;
-	    margin-top: 20px;
-	    outline: none;
-	    border: none;
-	    border-radius: 5px;
-	    transition: .2s ease-in;
-	    cursor: pointer;
-    }
-    button:hover{
-    	background: #6d44b8;
-    }   
-   a{
-    color: white;
-    text-decoration: none;
-   }
-
+            color: #fff;
+            font-size: 2.3em;
+            justify-content: center;
+            display: flex;
+            margin: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+        }
+        button{
+            width: 60%;
+            height: 40px;
+            margin: 10px auto;
+            justify-content: center;
+            display: block;
+            color: #fff;
+            background: #573b8a;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 20px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            transition: .2s ease-in;
+            cursor: pointer;
+        }
+        button:hover{
+            background: #6d44b8;
+        }   
+        a{
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>ForUni</h1>
-        <div class="topnav">
-            <input type="text" placeholder="Search..">
-        </div>
-        <h2>Entrar/cadastrar</h2>
-        <img src="./src/images/avatar.png" alt="Avatar" class="avatar">
-        <style>
-            
+    <div class="container">
+        <header>
+            <h1>ForUni</h1>
+            <div class="topnav">
+                <input type="text" placeholder="Busca..">
+            </div>
+            <a class="login" href="#"><h2>Entrar/cadastrar</h2></a>
+            <img src="./src/images/avatar.png" alt="Avatar" class="avatar">
+        </header>
 
-        </style>
-    </header>
-
-    <div class="menu">
-        <nav>
-            <ul>
+        <div class="menu">
+            <nav>
                 <ul>
-                    <li><a href="/Home.html">Pagina Inicial</a></li>
+                    <ul>
+                        <li><a href="/Home.html">Pagina Inicial</a></li>
+                    </ul>
+                    <li><a href="./Cursos.html">Cursos</a></li>
+                    <li><a href="./Artigos.html">Artigos</a></li>
                 </ul>
-                <li><a href="./Cursos.html">Cursos</a></li>
-                <li><a href="./Artigos.html">Artigos</a></li>
-            </ul>
-        </nav>
-    </div>
+            </nav>
+        </div>
    
-    <div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
+        <div class="main">  	
+            <input type="checkbox" id="chk" aria-hidden="true">
 
-			<div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-                    <button> <a href="/Forum.html">Login</a></button>
-				</form>
-			</div>
+                <div class="login">
+                    <form>
+                        <label for="chk" aria-hidden="true">Login</label>
+                        
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="pswd" placeholder="Password" required>
+                        <button> <a href="/Forum.html">Login</a></button>
+                    </form>
+                </div>
 
-			
+        </div>		
 	</div>
 </body>
 </html>
