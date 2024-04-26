@@ -6,19 +6,25 @@
     <title>ForUni</title>
     <style>
         body {
-            margin: 10px;
+            margin: 0;
             padding: 0;
+            background-color: #c2e5f0;
+            overflow-x: hidden; /* Impede o overflow horizontal */
         }
         .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
             width: 100%;
             height: 10vh;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background-color: #FF0000;
+            background-color: #044aff;
             color: #ffffff;
-            padding: 0px;
-            margin: 0px 0px 0px 0px;;
         }
         .topnav input[type="text"] {
             width: 30vw;
@@ -32,18 +38,22 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
+            object-fit: cover; /* Garante que a imagem do avatar mantenha a proporção */
         }
         .menu {
-            background-color: #0000FF;
-            padding: 10px 0;
-            margin: 50px 0 0 0; 
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #007eff;
+            padding: 10px 50px;
+            margin: 50px;
         }
         .menu nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-around;
         }
         .menu nav ul li {
             display: inline;
@@ -54,18 +64,71 @@
             color: #ffffff;
             font-size: 16px;
         }
+        .forum-section {
+            width: 80%;
+            display: flex;
+            margin-top: 20px;
+        }
+        .filters {
+            width: 20%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .questions {
+            width: 80%;
+            padding: 20px;
+        }
+        .question {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            color: #044aff;
+        }
+        .question p {
+            color: #555555;
+        }
+        .user-info {
+            display: flex;
+            align-items: left;
+            margin-bottom: 10px;
+        }
+        .user-info img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .user-info span {
+            font-weight: bold;
+        }
+        .question-options {
+            display: flex;
+        }
+        .question-options button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: #007eff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header class="container">
-        <h1>ForUni</h1>
-        <div class="topnav">
-            <input type="text" placeholder="Search..">
-        </div>
-        <h2>Entrar/cadastrar</h2>
-        <img src="./src/images/avatar.png" alt="Avatar" class="avatar">
-    </header>
-    <main>
+    <div class="container">
+        <header>
+            <h1>ForUni</h1>
+            <div class="topnav">
+                <input type="text" placeholder="Search..">
+            </div>
+            <h2>Entrar/cadastrar</h2>
+            <img src="./src/images/avatar.png" alt="Avatar" class="avatar">
+        </header>
         <div class="menu">
             <nav>
                 <ul>
@@ -77,9 +140,60 @@
                 </ul>
             </nav>
         </div>
-    </main>
-    <footer>
-
-    </footer>
+        <div class="forum-section">
+            <div class="filters">
+                <h3>Filtrar por Assuntos</h3>
+                <ul>
+                    <li><a href="#">Exatas</a></li>
+                    <li><a href="#">Humanas</a></li>
+                    <li><a href="#">Biologicas</a></li>
+                </ul>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <div class="user-info">
+                        <img src="./src/images/avatar2.png" alt="Avatar do Usuário">
+                        <span>Nome do Usuário</span>
+                        <span> • Há 2 horas</span>
+                    </div>
+                    <h3>Título da Pergunta 1</h3>
+                    <p>Descrição da Pergunta 1</p>
+                    <div class="question-options">
+                        <button>Curtir</button>
+                        <button>Responder</button>
+                        <button>Enviar Direct</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="user-info">
+                        <img src="./src/images/avatar3.png" alt="Avatar do Usuário">
+                        <span>Nome do Usuário</span>
+                        <span> • Há 3 horas</span>
+                    </div>
+                    <h3>Título da Pergunta 2</h3>
+                    <p>Descrição da Pergunta 2</p>
+                    <div class="question-options">
+                        <button>Curtir</button>
+                        <button>Responder</button>
+                        <button>Enviar Direct</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="user-info">
+                        <img src="./src/images/avatar4.png" alt="Avatar do Usuário">
+                        <span>Nome do Usuário</span>
+                        <span> • Há 4 horas</span>
+                    </div>
+                    <h3>Título da Pergunta 3</h3>
+                    <p>Descrição da Pergunta 3</p>
+                    <div class="question-options">
+                        <button>Curtir</button>
+                        <button>Responder</button>
+                        <button>Enviar Direct</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
