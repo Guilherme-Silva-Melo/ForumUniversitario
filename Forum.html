@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForUni</title>
     <style>
+        *{
+
+        }
         body {
             margin: 0;
             padding: 0;
@@ -124,6 +127,23 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .filters ul li{
+            list-style-type: none;
+            padding: 10px;
+
+        }
+        ul li a{
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+            text-align: center;
+            list-style-type: none;
+
+        }
+        .title{
+            text-align: center;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
@@ -133,7 +153,11 @@
             <div class="topnav">
                 <input type="text" placeholder="Busca..">
             </div>
+
+            <a class="login" href="#">Configurações</a>
+
             <a class="login" href="Home.html"><h2>Entrar/cadastrar</h2></a>
+
             <img src="./src/images/avatar.png" alt="Avatar" class="avatar">
         </header>
         <div class="menu">
@@ -150,11 +174,14 @@
         
         <div class="forum-section">
             <div class="filters">
-                <h3>Filtrar por Assuntos</h3>
+                <h3 class="title">Filtrar por Assuntos</h3>
                 <ul>
-                    <li><a href="#">Exatas</a></li>
-                    <li><a href="#">Humanas</a></li>
-                    <li><a href="#">Biologicas</a></li>
+                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="#">Administração</a></li>
+                    <li><a href="#">Sistemas Operacionais</a></li>
+                    <li><a href="#">Mercado de Trabalho</a></li>
+                    <li><a href="#">Entretenimento</a></li>
+                    <li><a href="#">Redes</a></li>
                 </ul>
             </div>
             <div class="questions">
@@ -167,9 +194,9 @@
                     <h3>Título da Pergunta 1</h3>
                     <p>Descrição da Pergunta 1</p>
                     <div class="question-options">
-                        <button>Curtir</button>
-                        <button>Responder</button>
-                        <button>Enviar Direct</button>
+                        <button class="i">Curtir</button>
+                        <button class="responder">Responder</button>
+                        <button class="mensagem">Enviar Direct</button>
                     </div>
                 </div>
                 <div class="question">
@@ -181,7 +208,7 @@
                     <h3>Título da Pergunta 2</h3>
                     <p>Descrição da Pergunta 2</p>
                     <div class="question-options">
-                        <button>Curtir</button>
+                        <button >Curtir</button>
                         <button>Responder</button>
                         <button>Enviar Direct</button>
                     </div>
