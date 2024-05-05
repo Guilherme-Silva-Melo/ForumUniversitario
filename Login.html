@@ -146,84 +146,9 @@
         text-decoration: none;
       }
 
-      .secao4 {
-        margin: 0;
-        font-family: Helvetica, sans-serif;
-      }
-
-      .secao4-div {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 10px;
-        text-align: center;
-      }
-
-      .secao4-div-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: calc(100% / 4 - 60px);
-        margin: 20px;
-        padding: 20px;
-        box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
-        border-radius: 25px;
-        background-color: white;
-        transition: all 0.5s ease;
-        cursor: pointer;
-      }
-
-      .secao4-div-card:hover {
-        transform: scale(1.1);
-        z-index: 1;
-      }
-
-      .secao4-div-card img {
-        width: 55%;
-        height: auto;
-      }
-
-      .secao4-div-card h3 {
-        margin-bottom: 0px;
-      }
-
       h2 {
         text-align: center;
       }
-      
-      .filters {
-        width: 20%; /* Ajusta a largura do filtro */
-        padding: 20px;
-        background-color: #f2f2f2;
-        border-radius: 10px;
-        margin-right: 20px; /* Adiciona margem à direita para separar os elementos */
-      }
-      .title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px; /* Adiciona margem inferior para separar o título dos itens */
-}
-
-.filters ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.filters ul li {
-    padding: 10px 0;
-}
-
-.filters ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-size: 18px;
-    transition: color 0.3s ease; /* Adiciona transição suave na cor ao passar o mouse */
-}
-
-.filters ul li a:hover {
-    color: #007eff; /* Muda a cor ao passar o mouse */
-    font-weight: bold; /* Adiciona negrito ao passar o mouse */
-}
     </style>
   </head>
   <body>
@@ -240,18 +165,6 @@
         </style>
     </header>
 
-    <div class="menu">
-        <nav>
-            <ul>
-                <ul>
-                    <li><a href="/Home.html">Pagina Inicial</a></li>
-                </ul>
-                <li><a href="./Cursos.html">Cursos</a></li>
-                <li><a href="./Artigos.html">Artigos</a></li>
-            </ul>
-        </nav>
-    </div>
-
     <div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
 
@@ -259,9 +172,9 @@
 				<form>
 					<label for="chk" aria-hidden="true">Login</label>
 
-					<input type="email" name="email" placeholder="Email" required="">
+					<input type="email" name="email" placeholder="Email" required="" pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$">
 					<input type="password" name="pswd" placeholder="Password" required="">
-                    <button> <a href="/Home.html">Login</a></button>
+          <button> <a href="/Home.html">Login</a></button>
                     
 				</form>
                 <button> <a href="/Cadastro.html">Cadastro</a></button>
