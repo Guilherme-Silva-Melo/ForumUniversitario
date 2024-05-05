@@ -3,5 +3,7 @@ Projeto de Desenvolvimento Web Front-End criado para o desenvolvimento de uma pa
 ## INTEGRANTES
 - Guilherme Augusto Silva de Melo</br>
 - Guilherme Schmidt Lingnau
-## Link GITHUB
+## Link GITHUB PAGES
 github.com/Guilherme-Silva-Melo/ForumUniversitario/
+## Link APRESENTAÇÃO
+https://youtu.be/G1Pe8-1SoZw
