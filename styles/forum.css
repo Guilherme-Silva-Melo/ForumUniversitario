@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #c2e5f0;
+    overflow-x: hidden;
+}
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #044aff;
+    color: #ffffff;
+}
+.login{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.topnav input[type="text"] {
+    width: 30vw;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #007eff;
+    padding: 10px 50px;
+    margin: 50px 0;
+}
+.menu nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+.menu nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+.forum-section {
+    width: 80%;
+    display: flex;
+    margin-top: 20px;
+}
+.filters {
+    width: 20%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+}
+.questions {
+    width: 80%;
+    padding: 20px;
+}
+.question {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.question h3 {
+    color: #044aff;
+}
+.question p {
+    color: #555555;
+}
+.user-info {
+    display: flex;
+    align-items: left;
+    margin-bottom: 10px;
+}
+.user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-info span {
+    font-weight: bold;
+}
+.question-options {
+    display: flex;
+}
+.question-options button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #007eff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.filters ul li{
+    list-style-type: none;
+    padding: 10px;
+
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    list-style-type: none;
+
+}
+.title{
+    text-align: center;
+    font-size: 24px;
+}
