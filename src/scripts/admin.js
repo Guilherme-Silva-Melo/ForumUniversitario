@@ -1,7 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     const userForm = document.getElementById('userForm');
     const message = document.getElementById('message');
+    const userList = document.getElementById('userList');
   
+    
+    function renderUserList() {
+      
+      userList.innerHTML = '';
+  
+      
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+  
+    
+      users.forEach(user => {
+        const li = document.createElement('li');
+        li.textContent = `Data: ${user.date}, Nome: ${user.username}, E-mail: ${user.email}`;
+        userList.appendChild(li);
+      });
+    }
+  
+    // Adiciona um ouvinte de evento para o formulário de usuário
     userForm.addEventListener('submit', function(event) {
       event.preventDefault();
   
@@ -9,26 +27,39 @@ document.addEventListener('DOMContentLoaded', function() {
       const email = document.getElementById('email').value;
   
       if (username && email) {
-        // Retrieve existing users from localStorage
+        // Cria um objeto de usuário com nome, email e data atual
+        const user = {
+          username: username,
+          email: email,
+          date: new Date().toLocaleDateString() // Adiciona a data de envio
+        };
+  
+        // Recupera usuários existentes do localStorage ou cria um novo array vazio
         let users = JSON.parse(localStorage.getItem('users')) || [];
   
-        // Add new user to the array
-        users.push({ username: username, email: email });
+        // Adiciona o novo usuário ao array
+        users.push(user);
   
-        // Save updated users array to localStorage
+        // Salva o array atualizado de usuários no localStorage
         localStorage.setItem('users', JSON.stringify(users));
   
-        // Display success message
+        // Renderiza a lista atualizada de usuários
+        renderUserList();
+  
+        // Exibe mensagem de sucesso
         message.textContent = 'Usuário cadastrado com sucesso!';
         message.style.color = 'green';
   
-        // Clear the form
+       
         userForm.reset();
       } else {
-        // Display error message
+        
         message.textContent = 'Por favor, preencha todos os campos.';
         message.style.color = 'red';
       }
     });
+  
+    
+    renderUserList();
   });
   
