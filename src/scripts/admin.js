@@ -3,15 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const message = document.getElementById('message');
   const userList = document.getElementById('userList');
   const clearListButton = document.getElementById('clearListButton');
+  const searchField = document.getElementById('searchField');
+  const searchQuery = document.getElementById('searchQuery');
+  const searchButton = document.getElementById('searchButton');
 
   
-  function renderUserList() {
+  function renderUserList(users = JSON.parse(localStorage.getItem('users')) ) {
     
     userList.innerHTML = '';
-
-    
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
   
     users.forEach(user => {
       const li = document.createElement('li');
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const updatedUsers = users.filter(u => u.email !== user.email);
         localStorage.setItem('users', JSON.stringify(updatedUsers));
+        renderUserList(updatedUsers);
       });
 
       li.appendChild(deleteButton);
@@ -42,13 +42,25 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.removeItem('users'); // Remove o item 'users' do local storage
     message.textContent = 'Lista de usuários foi limpa.';
     message.style.color = 'orange';
-}
+  }
 
-// Adiciona um ouvinte de evento para o botão "Limpar Lista"
-clearListButton.addEventListener('click', function() {
-    limparLista();
-});
+  function searchUserList(field, query) {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const filteredUsers = users.filter(user => {
+      return user[field].includes(query);
+    });
+    renderUserList(filteredUsers);
+  }
+  // Adiciona um ouvinte de evento para o botão "Limpar Lista"
+  clearListButton.addEventListener('click', function() {
+      limparLista();
+  });
 
+  searchButton.addEventListener('click', function() {
+    const field = searchField.value;
+    const query = searchQuery.value.trim();
+    searchUserList(field, query);
+  });
 
   // Adiciona um ouvinte de evento para o formulário de usuário
   userForm.addEventListener('submit', function(event) {
@@ -75,7 +87,7 @@ clearListButton.addEventListener('click', function() {
       localStorage.setItem('users', JSON.stringify(users));
 
       // Renderiza a lista atualizada de usuários
-      renderUserList();
+      renderUserList(users);
 
       // Exibe mensagem de sucesso
       message.textContent = 'Usuário cadastrado com sucesso!';
