@@ -35,17 +35,20 @@
 				<form>
 					<label for="chk" aria-hidden="true">Cadastro</label>
 
-            <input type="text" name="name" placeholder="Nome" required="">
-            <input type="date" name="date" placeholder="Nascimento" required="">
-            <input type="email" name="email" placeholder="Email" required="" pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$">
-            <input type="password" name="pswd" placeholder="Senha" required="" >
-            <input type="password" id="checkpswd" name="Senha2" placeholder="Confirme a senha" required="">
-
-            <button> <a href="Home.html">Cadastrar</a></button>
+                    <input type="text" name="name" placeholder="Nome" required="">
+                    <input type="date" name="date" placeholder="Nascimento" required="">
+                    <input type="email" name="email" placeholder="Email" required="" pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$">
+                    <input type="password" name="pswd" placeholder="Senha" required="" >
+                    <input type="password" id="checkpswd" name="Senha2" placeholder="Confirme a senha" required="">
+                    <div class="buttonBox">
+                        <button> <a href="Home.html">Cadastrar</a></button>
+                        <button id="clearField-button">Limpar</button>
+                    </div>
 				</form>
 			</div>
 
 
 	</div>
+    <script src="src/scripts/cadastro.js"></script>
 </body>
 </html>
