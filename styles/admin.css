@@ -82,9 +82,14 @@ body {
     outline: none;
     box-sizing: border-box;
   }
+  .buttonBox {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
   
   button {
-    width: 100%;
+    width: 40%;
     padding: 15px;
     color: #fff;
     background: #573b8a;

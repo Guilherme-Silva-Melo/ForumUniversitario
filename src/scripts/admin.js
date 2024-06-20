@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchQuery = document.getElementById('searchQuery');
   const searchButton = document.getElementById('searchButton');
 
+  const clearButton = document.getElementById('clearField-button');
+  const formCadastro = document.getElementsByClassName('signup')[0];
+
   
   function renderUserList(users = JSON.parse(localStorage.getItem('users')) ) {
     
@@ -51,6 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     renderUserList(filteredUsers);
   }
+
+  function limparCampos() {
+    const inputs = formCadastro.querySelectorAll('input');
+    inputs.forEach(input => {
+        input.value = '';
+    });
+  }
+
+  // Adiciona um ouvinte de evento para o botão "Limpar Lista"
+  clearButton.addEventListener('click', function() {
+    event.preventDefault();  // Evita que o checkbox seja marcado
+    limparCampos();
+  });
+
   // Adiciona um ouvinte de evento para o botão "Limpar Lista"
   clearListButton.addEventListener('click', function() {
       limparLista();
