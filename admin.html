@@ -25,6 +25,8 @@
       <section class="signup">
         <h2>Cadastrar Novo Usuário</h2>
         <form id="userForm">
+          <label for="id">ID do Usuário:</label>
+          <input type="number" id="id" name="id" required>
           <label for="username">Nome do Usuário:</label>
           <input type="text" id="username" name="username" required>
           <label for="email">E-mail:</label>
@@ -41,6 +43,7 @@
         <div>
           <label for="searchField">Pesquisar:</label>
           <select id="searchField">
+            <option value="id">Id</option>
             <option value="username">Nome</option>
             <option value="email">E-mail</option>
             <option value="date">Data</option>

@@ -13,20 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
     userList.innerHTML = '';
     users.forEach(user => {
       const li = document.createElement('li');
-      li.classList.add('user-item'); // Adiciona a classe para centralizar o conteúdo
+      li.classList.add('user-item');
 
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Excluir';
       deleteButton.classList.add('delete-button');
       deleteButton.addEventListener('click', () => {
         userList.removeChild(li);
-        const updatedUsers = users.filter(u => u.email !== user.email);
+        const updatedUsers = users.filter(u => u.id !== user.id);
         localStorage.setItem('users', JSON.stringify(updatedUsers));
         renderUserList(updatedUsers);
       });
 
       li.appendChild(deleteButton);
-      li.appendChild(document.createTextNode(` Data: ${user.date}, Nome: ${user.username}, E-mail: ${user.email}`));
+      li.appendChild(document.createTextNode(`ID: ${user.id}, Data: ${user.date}, Nome: ${user.username}, E-mail: ${user.email}`));
       userList.appendChild(li);
       
     });
@@ -70,15 +70,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
   userForm.addEventListener('submit', function(event) {
     event.preventDefault();
+    const id = document.getElementById('id').value;
     const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
-    if (username && email) {
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    if (id && username && email) {
+      // Check for duplicate ID
+      const duplicate = users.find(user => user.id === id);
+      if (duplicate) {
+        exibirModal('ID já existe. Por favor, escolha outro ID.', 'red');
+        return;
+      }
+
       const user = {
+        id: id,
         username: username,
         email: email,
         date: new Date().toLocaleDateString()
       };
-      let users = JSON.parse(localStorage.getItem('users')) || [];
       users.push(user);
       localStorage.setItem('users', JSON.stringify(users));
       renderUserList(users);
