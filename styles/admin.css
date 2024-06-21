@@ -17,7 +17,7 @@ body {
   }
   
   .menu {
-    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +31,8 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+  
+    
   }
   
   .menu nav ul li {
@@ -47,7 +49,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* Define a altura da área principal */
+    height: 80vh;
   }
   
   .main {
@@ -64,6 +66,7 @@ body {
   .signup h2 {
     color: #fff;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   label {
@@ -84,12 +87,13 @@ body {
   }
   .buttonBox {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center; 
     width: 100%;
+    gap: 20px; /
   }
   
   button {
-    width: 40%;
+    flex: 1;
     padding: 15px;
     color: #fff;
     background: #573b8a;
@@ -99,12 +103,89 @@ body {
     border-radius: 5px;
     transition: 0.2s ease-in;
     cursor: pointer;
+    margin: 0 10px; 
+  }
+  
+  
+  .buttonBox button:first-child {
+    margin-left: 0;
+  }
+  
+  .buttonBox button:last-child {
+    margin-right: 0;
   }
   
   button:hover {
     background: #6d44b8;
   }
+
+  #cadastrarButton {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   
+
+  #cadastrarButton:hover {
+    background-color: darkgreen;
+  }
+  
+  #clearListButton{
+    background-color: red;
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #clearListButton:hover{
+    background-color: darkred;
+  }
+
+/* Estilos para a barra de pesquisa */
+#searchField {
+  padding: 5px;
+
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#searchQuery {
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px 10px;
+
+}
+
+#searchButton {
+  padding: 8px 15px;
+  font-size: 1.4em;
+  background-color: #573b8a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block; 
+   margin: 0 auto;
+}
+
+#searchButton:hover {
+  background-color: #432b6d;
+}
+
   .delete-button {
     color: white;
     cursor: pointer;
@@ -116,7 +197,7 @@ body {
   }
 
   .delete-button:hover {
-    background-color: lightcoral; /* Tom mais claro de vermelho */
+    background-color: lightcoral; 
   }
 
   #clearListButton{
@@ -144,3 +225,39 @@ body {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   }
   
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
